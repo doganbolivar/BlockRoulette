@@ -9,8 +9,8 @@ pragma solidity ^0.7.6;
         require(msg.value == 1 ether);
         require(block.timestamp != pastBlockTime);    
         pastBlockTime = block.timestamp;     
-    // if the block.timestamp is divisible by 7 you win the Ether in the contract
-        if(block.timestamp % 7 == 0) {         
+    // if the block.timestamp is divisible by 19 you win the Ether in the contract
+        if(block.timestamp % 19 == 0) {         
           (bool sent, ) = msg.sender.call{value: address(this).balance}("");         
           require(sent, "Failed to send Ether");     
         } 
